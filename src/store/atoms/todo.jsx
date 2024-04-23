@@ -10,19 +10,16 @@ export const filterKeyAtom = atom({
     default: ""
 })
 
-export const filteredTodoAtom = atom({
-    key: "filteredTodoAtom",
-    default: []
-})
+
 
 export const filterTodoSelector = selector({
     key: "filterTodoSelector",
     get: ({ get }) => {
         const todos = get(todoAtom);
         const filterKey = get(filterKeyAtom);
-        const filteredTodo = get(filteredTodoAtom)
         const newTodo = todos.filter((todo) => todo.title.includes(filterKey) || todo.description.includes(filterKey));
         // console.log("new: ", newTodo);
-        return [...filteredTodo, ...newTodo];
+
+        return [...newTodo];
     }
 })

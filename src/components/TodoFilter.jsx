@@ -8,19 +8,19 @@ function TodoFilter() {
 
     const handleSearch = () => {
         setFilterKey(filterWord);
-        setFilterWord("");
     };
 
     const handleClearFilter = () => {
         setFilterKey("")
+        setFilterWord("");
     }
 
     return (
         <div>
-            <h1>TodoFilter</h1>
+            <h3>TodoFilter</h3>
             <input type="text" placeholder="filter word" value={filterWord} onChange={e => setFilterWord(e.target.value)} />
             <button onClick={handleSearch}>Search</button>
-            <button onClick={handleClearFilter}>clear filter</button>
+            <button onClick={handleClearFilter}>clear</button>
         </div>
     )
 }

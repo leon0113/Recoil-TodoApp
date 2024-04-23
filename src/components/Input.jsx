@@ -15,7 +15,7 @@ export default function Input() {
             title,
             description
         }
-        setTodo(prevTodo => [...prevTodo, newTodo]);
+        setTodo(prevTodo => [newTodo, ...prevTodo]);
         setTitle("");
         setDescription("");
     }
